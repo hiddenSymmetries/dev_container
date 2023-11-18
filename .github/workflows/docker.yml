@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v3
         if: ${{ startsWith(github.ref, 'refs/heads') && github.ref == 'refs/heads/master' }}
         with:
-          context: ci
+          context: . 
           file: Dockerfile.ubuntu
           push: true
           tags: hiddensymmetries/simsopt_dev:latest
@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v3
         if: ${{ startsWith(github.ref, 'refs/heads') && github.ref != 'refs/heads/master' }}
         with:
-          context: ci
+          context: .
           file: Dockerfile.ubuntu
           push: false
           tags: hiddensymmetries/simsopt_dev:test
@@ -57,7 +57,7 @@ jobs:
         uses: docker/build-push-action@v3
         if: startsWith(github.event.ref, 'refs/tags/v')
         with:
-          context: ci
+          context: .
           file: Dockerfile.ubuntu
           push: true
           tags: "hiddensymmetries/simsopt_dev:${{steps.vars.outputs.tag}}"
