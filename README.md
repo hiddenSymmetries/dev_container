@@ -1,11 +1,10 @@
-# Simsopt and Docker Containers
+# Simsopt Dev Container
+
+This repo builds the image used for Simsopt Dev Container.
 
 
-This document explains how to build docker container for simsopt. It also provides
-instructions on how to run simsopt docker container
-
-
-## Build the container
+## Build the image
+The image can be built locally
 
 0. Install docker
 1. Build the docker image by running the `docker build` command:
@@ -21,7 +20,6 @@ instructions on how to run simsopt docker container
    docker push <image_name:tag>
    ```
    
-
 ## Run the container
 There are two cases here: 1) docker image is built locally and 2) docker image downloaded from a repo
 
